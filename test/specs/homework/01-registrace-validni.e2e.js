@@ -3,21 +3,18 @@
  */
 import { myName, adminEmail, myPassword, getRandomEmail } from '../fixtures.js'
 
-describe('Validni Registrace', async () => {
+describe('Validni registrace', async () => {
 
     beforeEach(async () => {
         await browser.reloadSession();
         await browser.url('/registrace');
     });
 
-    it('Validni  Registrace', async () => {
-        //console.log(username)
-        //console.log(getRandomEmail())
+    it('Test validni registrace', async () => {
         const nameField = await $('#name');
         await expect(nameField).toBeDisplayed();
         await expect(nameField).toBeEnabled();
         await nameField.setValue(myName);
-
 
         const emailField = await $('#email'); // awaited once, used result on twice
         await expect(emailField).toBeDisplayed();
@@ -40,11 +37,9 @@ describe('Validni Registrace', async () => {
         await expect(button).toHaveText('Zaregistrovat');
         await button.click();
 
-
         const userMenu = await $('.navbar-right');
         const loginText = await userMenu.$('span');
         await expect(loginText).toHaveText('Přihlášen');
-
 
         const displayName = await userMenu.$('strong');
         await expect(displayName).toHaveText(myName);

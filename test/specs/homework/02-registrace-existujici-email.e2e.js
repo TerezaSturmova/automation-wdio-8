@@ -3,21 +3,18 @@
  */
 import { myName, adminEmail, myPassword } from '../fixtures.js'
 
-describe('Existujici Email', async () => {
+describe('Existujici email', async () => {
 
     beforeEach(async () => {
         await browser.reloadSession();
         await browser.url('/registrace');
     });
 
-    it('Existujici Email', async () => {
-        //console.log(username)
-        //console.log(getRandomEmail())
+    it('Test existujici email', async () => {
         const nameField = await $('#name');
         await expect(nameField).toBeDisplayed();
         await expect(nameField).toBeEnabled();
         await nameField.setValue(myName);
-
 
         const emailField = await $('#email'); // awaited once, used result on twice
         await expect(emailField).toBeDisplayed();

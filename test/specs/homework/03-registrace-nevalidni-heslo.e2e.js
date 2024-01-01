@@ -11,14 +11,11 @@ describe('Nevalidní Heslo', async () => {
     });
 
     it('Test nevalidní heslo', async () => {
-        //console.log(username)
-        //console.log(getRandomEmail())
         const nameField = await $('#name');
         await expect(nameField).toBeDisplayed();
         await expect(nameField).toBeEnabled();
         await nameField.setValue(myName);
         
-
         const emailField = await $('#email'); // awaited once, used result on twice
         await expect(emailField).toBeDisplayed();
         await expect(emailField).toBeEnabled();
@@ -50,10 +47,6 @@ describe('Nevalidní Heslo', async () => {
 
         await browser.pause(1000);
         await browser.saveScreenshot('03-nevalidni-heslo.png');
-
-
-
-        
     });
 
 });
