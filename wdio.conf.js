@@ -46,8 +46,8 @@ export const config = {
     }],
     logLevel: 'silent',
     bail: 0,
-    baseUrl: 'ADRESA TESTOVANE APLIKACE',
-    waitforTimeout: 10000,
+    baseUrl: 'https://team8-2022brno.herokuapp.com/',
+    waitforTimeout: 2500,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     services: [
